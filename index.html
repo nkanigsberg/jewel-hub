@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<!-- Nathan Kanigsberg
+Project 2 - Juno Web Development Course
+July 19, 2020 -->
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jewel Hub</title>
+	<link rel="stylesheet" href="style.css">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Cardo:ital@1&display=swap" rel="stylesheet">
+	<!-- Font Awesome icons -->
+	<script src="https://kit.fontawesome.com/51d17a3aa7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+	<!-- ==================== Header ==================== -->
+	<header class="dark">
+		<div class="wrapper">
+			<nav>
+
+				<!-- Logo -->
+				<div class="logo-container">
+					<a href="#" class="logo">JEWEL<span>//HUB</span></a>
+				</div>
+
+				<!-- Navigation menu -->
+				<nav class="nav-menu">
+					<input type="checkbox" name="hamburger" id="hamburger">
+					<label for="hamburger"><i class="fas fa-bars"></i></label>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#featured">Shop</a></li>
+						<li><a href="#blog">Blog</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</nav>
+
+			<!-- Main heading -->
+			<div class="heading-container">
+				<h1>Layering Collection</h1>
+				<a href="#" class="button">Shop now</a>
+			</div>
+		</div>
+	</header>
+
+
+	<!-- ==================== Main ==================== -->
+	<main>
+
+		<!-- New Arrivals section -->
+		<section class="new-arrivals light" id="new-arrivals">
+			<div class="wrapper new-arrivals-container">
+
+				<!-- Image -->
+				<div class="new-arrivals-image">
+					<img src="Assets/model.jpg" alt="A woman looking at the camera and wearing a necklace">
+				</div>
+
+				<!-- Text -->
+				<div class="new-arrivals-text">
+					<h2>Check Out New Arrivals</h2>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas deserunt est, accusamus fuga labore fugiat quod inventore, blanditiis esse sequi placeat, praesentium sint magnam nemo ducimus aliquid maiores. A soluta molestias incidunt accusamus consequuntur earum reprehenderit delectus rerum ut ad facilis, porro in doloremque dignissimos officia nihil assumenda ipsa. At?</p>
+					<a href="#" class="button">Shop now</a>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- Blog section -->
+		<section class="blog dark" id="blog">
+			<div class="wrapper blog-container">
+
+				<!-- Left arrow - desktop only -->
+				<i class="fas fa-chevron-left blog-arrow desktop"></i>
+
+				<!-- Blog content -->
+				<div class="blog-text-container">
+					<h3>Latest blog posts</h3>
+					<h2>A Sustainable Future</h2>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi vitae ex, quisquam asperiores unde velit, laudantium repellat deserunt nam dolore non culpa, sed provident error! Nam cupiditate ad quaerat esse?</p>
+
+					<!-- Arrows - mobile only -->
+					<div class="blog-arrows-container-mobile">
+						<i class="fas fa-chevron-left blog-arrow mobile"></i>
+						<i class="fas fa-chevron-right blog-arrow mobile"></i>
+					</div>
+					<a href="#" class="button">Learn more</a>
+				</div>
+
+				<!-- Right arrow - desktop only -->
+				<i class="fas fa-chevron-right blog-arrow desktop"></i>
+			</div>
+		</section>
+
+
+		<!-- Featured section -->
+		<section class="featured light" id="featured">
+			<div class="wrapper">
+				<h2>Featured Items</h2>
+
+				<!-- Photo Gallery -->
+				<div class="gallery">
+					<ul>
+
+						<!-- Chains image -->
+						<li>
+							<div class="gallery-item">
+								<img src="Assets/chains.jpg" alt="A number of hanging chains and pendants" class="chains">
+								<div class="image-text-container dark">
+									<h4>Dole Chains & Pendants</h4>
+									<span class="price">$50</span>
+								</div>
+							</div>
+						</li>
+
+						<!-- Ring image -->
+						<li>
+							<div class="gallery-item">
+								<img src="Assets/ring-model.jpg" alt="A hand wearing a steel ring" class="ring">
+								<div class="image-text-container dark">
+									<h4>Made of Steel Ring</h4>
+									<span class="price">$30</span>
+								</div>
+							</div>
+						</li>
+
+						<!-- Watch image -->
+						<li>
+							<div class="gallery-item">
+								<img src="Assets/watch-model.jpg" alt="A person tying their shoes wearing a golden watch" class="watch">
+								<div class="image-text-container dark">
+									<h4>Malvori Watch</h4>
+									<span class="price">$120</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+
+
+	<!-- ==================== Footer ==================== -->
+	<footer>
+
+		<!-- Contact section -->
+		<section class="contact dark" id="contact">
+			<div class="wrapper">
+				<h2>Contact Us</h2>
+
+				<!-- Contact form -->
+				<form action="#" method="#" class="contact-form">
+
+					<!-- Name input -->
+					<label for="input-name" class="sr-only">Name</label>
+					<input type="text" id="input-name" name="input-name" placeholder="Name" class="contact-input" required>
+
+					<!-- Email input -->
+					<label for="input-email" class="sr-only">Email</label>
+					<input type="email" id="input-email" name="input-email" placeholder="Email" class="contact-input" required>
+					
+					<!-- Message input -->
+					<label for="input-message" class="sr-only">Message</label>
+					<textarea type="text" id="input-message" name="input-message" placeholder="Message" class="contact-input" required></textarea>
+					<input type="submit" value="Submit" class="button">
+				</form>
+			</div>
+		</section>
+
+
+			<!-- Copyright -->
+		<div class="copyright dark">
+			<p class="logo">JEWEL<span>//HUB</span></p>
+		</div>
+	</footer>
+
+</body>
+</html>

@@ -1,0 +1,655 @@
+/* Nathan Kanigsberg
+Project 2 - Juno Web Development Course
+July 19, 2020 */
+
+
+/* Setup snippet */
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+
+/* Clearing default styles */
+h1, h2, h3, h4, p, ul, li, a, img {
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+}
+
+/* Keep images inside container */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Set default font size to 10px */
+html {
+	font-size: 62.5%;
+}
+
+/* scale default font size to 16px using rem */
+body {
+	font-size: 1.6rem;
+}
+
+
+/* ==================== General Styles ==================== */
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1200px;
+	/* border: 1px solid red; */
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	font-size: 2.5rem;
+	text-decoration: none;
+	font-family: 'Barlow', sans-serif;
+	color: #1F0A03;
+	border-bottom: 2px solid #0000;
+	transition: 0.15s;
+}
+
+.logo {
+	font-size: 2.5rem;
+	font-family: 'Cardo', serif;
+	position: relative;
+}
+
+.logo span {
+	position: absolute;
+	left: -8px;
+	bottom: -28px;
+}
+
+h2 {
+	font-size: 4rem;
+	font-family: 'Cardo', serif;
+	text-transform: uppercase;
+	color: #7B2F00;
+	letter-spacing: 2.5px;
+	padding-bottom: 25px;
+}
+
+p {
+	font-size: 2rem;
+	font-family: 'Barlow', sans-serif;
+	color: #232221;
+	line-height: 1.5;
+	padding-bottom: 30px;
+}
+
+/* Default section styling */
+section {
+	padding: 80px 0 120px;
+	transition: 1s;
+}
+
+/* change text colors in dark sections to white */
+ .dark a,
+ .dark h2,
+ .dark h3,
+ .dark h4,
+ .dark p,
+ .dark .button {
+	color: #FFFFFF;
+}
+
+/* Button styles  */
+.button {
+	padding: 10px 35px 14px;
+	border: 3px solid #FFB100;
+	align-self: flex-start;
+	transition: 0.15s;
+	transition-property: background-color, color;
+	background-color: #0000;
+	font-size: 2.5rem;
+	font-family: 'Barlow', sans-serif;
+	cursor: pointer;
+}
+
+/* Button hover effect */
+.button:hover,
+.button:focus {
+	background-color: #232221;
+	color: #FFFFFF;
+}
+
+/* Button click effect */
+.button:active {
+		background-color: #615f5d;
+}
+
+/* Variant of button hover for dark background */
+.dark .button:hover,
+.dark .button:focus {
+	background-color: #FFFFFFE0;
+	color: #232221;
+}
+
+/* Button click on dark background */
+.dark .button:active {
+	background-color: #a5a5a5e0;
+}
+
+
+
+/* ==================== Header Styles ==================== */
+header {
+	background-image: url(Assets/header-image.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	min-height: 800px;
+	transition: height 1s;
+}
+
+/* logo */
+.logo-container {
+	display: flex;
+	align-items: center;
+}
+
+header .logo {
+	position: absolute;
+	left: calc(20px + 1vw);
+}
+
+/* Hamburger menu for mobile */
+#hamburger,
+label[for="hamburger"] {
+	font-size: 2.5rem;
+	color: #FFFFFF;
+	text-align: right;
+	display: none;
+}
+
+/* nav menu */
+header nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 10vh;
+	min-height: 50px;
+}
+
+header ul {
+	display: flex;
+}
+
+header li {
+	margin: 0 20px;
+}
+
+header ul a {
+	padding: 8px 4px;
+}
+
+header ul a:hover,
+header ul a:focus {
+	border-bottom: 2px solid #FFB100;
+}
+
+/* heading */
+.heading-container {
+	display: flex;
+	flex-direction: column;
+	height: 70vh;
+	min-height: 400px;
+	justify-content: center;
+}
+
+h1 {
+	font-size: 10rem;
+	font-family: 'Cardo', serif;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	width: 50%;
+	transition: 1s;
+}
+
+
+
+/* ==================== Main Styles ==================== */
+
+/* New Arrivals Section */
+.new-arrivals-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.new-arrivals-image,
+.new-arrivals-text {
+	width: 45%
+}
+
+.new-arrivals-image {
+	position: relative;
+}
+
+.new-arrivals-image img {
+	box-shadow: 25px 35px 5px #49140030;
+	position: absolute;
+	bottom: 0;
+}
+
+.new-arrivals-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+/* Blog Section */
+.blog {
+	background-image: url(Assets/banner-image.jpg);
+	background-size: cover;
+}
+
+.blog-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+h3 {
+	font-family: 'Barlow', sans-serif;
+	font-size: 3rem;
+	font-weight: normal;
+	letter-spacing: 2px;
+	padding-bottom: 80px;
+	position: relative;
+}
+
+/* partial underline of h3 */
+h3::after {
+	content: '';
+	background-color: #FFB100;
+	width: 110px;
+  height: 2px;
+  position: absolute;
+	left: 75px;
+	top: 46px;
+}
+
+.blog-text-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 70%;
+	text-align: center;
+	position: relative;
+}
+
+.blog-arrow {
+	color: #FFFFFF;
+	font-size: 5rem;
+	cursor: pointer;
+}
+
+.blog-arrow.mobile {
+	display: none;
+}
+
+.blog .button {
+	align-self: center;
+}
+
+
+/* Featured Items Section (incl. gallery) */
+.featured h2 {
+	text-align: center;
+}
+
+.gallery ul {
+	display: flex;
+	justify-content: space-between;
+}
+
+.gallery img {
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	object-fit: none;
+}
+
+.chains {
+	object-position: 75% 60%;
+}
+
+.ring {
+	object-position: 80% 85%;
+}
+
+.watch {
+	object-position: 80% 75%;
+}
+
+.gallery-item {
+	position: relative;
+	width: calc((90vw / 3) - 40px );
+	height: calc((90vw / 3) - 40px );
+	max-width: 366px;
+	max-height: 366px;
+}
+
+.image-text-container {
+	background-color: #7B2F00;
+	position: absolute;
+	padding: 12px 20px;
+	text-transform: uppercase;
+	width: calc(150px + 4vw);
+	bottom: 0;
+	left: 0;
+	transition: 0.5s;
+}
+
+h4 {
+	font-size: calc(1.6rem + 0.5vw);
+	font-family: 'Barlow', sans-serif;
+	font-weight: 500;
+	padding-bottom: 5px;
+}
+
+.price {
+	font-size: calc(1.6rem + 0.6vw);
+	font-family: 'Barlow', sans-serif;
+	font-weight: 500;
+	color: #FFB100;
+}
+
+
+
+/* ==================== Footer Styles ==================== */
+
+/* Contact Us Section */
+.contact {
+	background-color: #491400;
+	text-align: center;
+}
+
+.contact h2 {
+	padding-bottom: 50px;
+}
+
+.contact-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.contact-input {
+	background-color: #491400;
+	border: 2px solid #FFFFFF;
+	padding: 20px;
+	font-size: 2.5rem;
+	font-family: 'Barlow', sans-serif;
+	transition: border 0.25s;
+}
+
+.contact-input::placeholder {
+	color: #FFB100;
+}
+
+.contact-input:focus {
+	border: 2px solid #FFB100;
+	outline: none;
+}
+
+#input-name {
+	width: calc(50% - 10px);
+	margin: 0 10px 10px 0;
+}
+
+#input-email {
+	width: calc(50% - 10px);
+	margin: 0 0 10px 10px;
+}
+
+#input-message {
+	width: 100%;
+	height: 200px;
+	margin: 10px 0 20px 0;
+	resize: vertical;
+}
+
+
+/* Copyright */
+.copyright {
+	background-color: #232221;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+}
+
+.copyright span {
+	bottom: 0;
+}
+
+
+
+/* ==================== Media Queries ==================== */
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+	.new-arrivals-image img {
+		position: static;
+	}
+
+	.new-arrivals-image,
+	.new-arrivals-text {
+		width: 47%
+	}
+
+	p {
+		font-size: 1.8rem;
+	}
+
+	.image-text-container {
+		bottom: -40px;
+	}
+}
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {	
+	
+	/* General */
+	section {
+		padding: 80px 0 60px;
+	}
+
+	h1 {
+		font-size: 6rem;
+	}
+
+	h2 {
+		font-size: 3.4rem;
+	}
+
+	.button {
+		font-size: 2.2rem;
+		padding: 8px 25px 10px;
+	}
+
+	/* Header */
+
+	header {
+		height: 60vh;
+		min-height: 300px;
+	}
+
+	header ul a {
+		font-size: 2.2rem;
+	}
+
+	header li {
+		margin: 0 10px;
+	}
+
+	.heading-container {
+		height: 45vh;
+		min-height: 270px;
+	}
+
+	/* Main */
+
+	/* Featured */
+	.gallery ul {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.gallery-item {
+		width: 80vw;
+		height: 80vw;
+		margin: 0 0 80px 0;
+	}
+
+	.image-text-container {
+		left: 95px
+	}
+
+	/* Contact */
+	.contact-input {
+		font-size: 2rem;
+	}
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	
+	/* General */
+	.button {
+		align-self: center;
+	}
+
+	/* header */
+	header {
+		height: 50vh;
+		min-height: 300px;
+		position: relative;
+	}
+
+	.heading-container {
+		align-items: center;
+		text-align: center;
+	}
+
+	header ul {
+		flex-direction: column;
+		position: fixed;
+		background-color: #000000B0;
+		height: 100%;
+		width: 30%;
+		right: -30%;
+		top: 0; 
+		padding: 60px calc(-8px + 5vw);
+		z-index: 10;
+		transition: 0.5s;
+	}
+
+	header li {
+		margin: 12px 0;
+	}
+
+	header ul a {
+		padding: 4px 2px;
+	}
+
+	h1 {
+		font-size: 4rem;
+		width: 100%;
+	}
+
+
+	/* Navigation menu with hamburger */
+	#hamburger,
+	label[for="hamburger"] {
+		display: inline;
+		position: fixed;
+		right: 30px;
+		top: 20px;
+		text-shadow: #491400 0 0 10px;
+	}
+
+	#hamburger {
+		opacity: 0;
+	}
+
+	label[for="hamburger"] {
+		cursor: pointer;
+		z-index: 20;
+	}
+
+	#hamburger:checked ~ ul {
+		display: flex;
+		right: 0;
+		top: 0;
+	}
+
+	#hamburger:focus + label {
+		border: 2px solid #FFB100;
+		border-radius: 5px;
+	}
+
+
+	/* Main */
+
+	/* New arrivals */
+	.new-arrivals-container {
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.new-arrivals-image {
+		width: 80%;
+		padding-bottom: 60px;
+	}
+
+	.new-arrivals-text {
+		width: 100%
+	}
+
+	/* Blog */
+	.blog-text-container {
+		width: 100%;
+	}
+
+	/* hide desktop arrows */
+	.blog-arrow.desktop {
+		display: none;
+	}
+
+	/* Show mobile arrows */
+	.blog-arrow.mobile {
+		display: inline;
+		padding: 0 20px 20px 20px;
+	}
+
+	.blog-arrows-container-mobile {
+		display: flex;
+	}
+
+	/* Contact */
+	#input-name,
+	#input-email {
+		width: 100%;
+		margin: 10px 0;
+	}
+}
